@@ -296,6 +296,32 @@ void mexFunction( int nlhs, mxArray *plhs[],
         mmdt_param.ratio_active_size = (float)((mxGetPr(value))[0]);
         myPrintf("[MMDT Parameter] ratio_active_size set to %f\n", mmdt_param.ratio_active_size );
       }
+      
+      value = mxGetField ( options, 0, "return_transform_w" );
+      if ( value != NULL )
+      {
+        mmdt_param.return_transform_w = (float)((mxGetPr(value))[0]);
+        myPrintf("[MMDT Parameter] return_transform_w set to %s\n", mmdt_param.return_transform_w ? "True" : "False" );
+      }
+      
+      value = mxGetField ( options, 0, "solver_type" );
+      if ( value != NULL )
+      {
+          const char *a[11];
+          a[0] = "L2R_LR";
+          a[1] = "L2R_L2LOSS_SVC_DUAL";
+          a[2] = "L2R_L2LOSS_SVC";
+          a[3] = "L2R_L1LOSS_SVC_DUAL";
+          a[4] = "MCSVM_CS";
+          a[5] = "L1R_L2LOSS_SVC";
+          a[6] = "L1R_LR";
+          a[7] = "L2R_LR_DUAL";
+          a[8] = "L2R_L2LOSS_SVR";
+          a[9] = "L2R_L2LOSS_SVR_DUAL";
+          a[10] = "L2R_L1LOSS_SVR_DUAL";
+        param.solver_type = (float)((mxGetPr(value))[0]);
+        myPrintf("[SVM Parameter] Setting solver type to %s\n", a[param.solver_type]);
+      }
 
 
     }

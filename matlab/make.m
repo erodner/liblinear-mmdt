@@ -15,6 +15,7 @@ try
 		mex CFLAGS="\$CFLAGS -std=c99" -largeArrayDims libsvmwrite.c
 		mex CFLAGS="\$CFLAGS -std=c99" -largeArrayDims train.c linear_model_matlab.c ../linear.cpp ../tron.cpp "../blas/*.c"
 		mex CFLAGS="\$CFLAGS -std=c99" -largeArrayDims predict.c linear_model_matlab.c ../linear.cpp ../tron.cpp "../blas/*.c"
+        mex CFLAGS="\$CFLAGS -std=c99" -largeArrayDims train_linear_mmdt_fast.c linear_model_matlab.c ../linear.cpp ../mmdt_linear_dual.cpp ../tron.cpp "../blas/*.c"
 	end
 catch
 	fprintf('If make.m failes, please check README about detailed instructions.\n');

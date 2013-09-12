@@ -1,6 +1,6 @@
 # This Makefile is used under Linux
 
-MATLABDIR ?= /usr/local/lang/matlab
+MATLABDIR ?= /Applications/MATLAB_R2013a.app
 CXX ?= g++
 #CXX = g++-3.3
 CC ?= gcc

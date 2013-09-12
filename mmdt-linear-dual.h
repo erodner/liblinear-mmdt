@@ -23,6 +23,7 @@ typedef struct mmdt_parameter {
   int verbose_level;
   int max_iter;
   float ratio_active_size;
+  bool return_transform_w;
 } mmdt_parameter;
 
 typedef struct mmdt_model {

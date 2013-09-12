@@ -1052,8 +1052,11 @@ model *mmdt_solver ( const problem *prob_target, const problem *prob_source, dou
 
   // substitute the hyperplane parameters in the source domain
   // with the ones in the target domain
-  free( hyperplane_model->w );
-  hyperplane_model->w = w_transformed;
+  if ( mmdt_param->return_transform_w )
+  {
+    free( hyperplane_model->w );
+    hyperplane_model->w = w_transformed;
+  }
 
   // set the new size of the expected feature dimension
   hyperplane_model->nr_feature = prob_target->n;
@@ -1089,6 +1092,7 @@ void std_mmdt_parameter ( struct mmdt_parameter *mmdt_param )
   mmdt_param->warm_start_theta = false;
   mmdt_param->max_iter = 1000;
   mmdt_param->ratio_active_size = 1.0;
+  mmdt_param->return_transform_w = true;
   
   mmdt_param->regularize_identity = true;
 }
