@@ -40,7 +40,7 @@ void print_string_matlab(const char *s) {myPrintf(s);}
 void exit_with_help()
 {
 	myPrintf(
-	"Usage: mmdt_model = train(hyperplane_model, weight_vector, training_label_vector, training_instance_matrix, 'liblinear_options', 'col');\n");
+	"Usage: mmdt_model = train_mmdt(hyperplane_model, weight_vector, training_label_vector, training_instance_matrix, 'liblinear_options', 'col');\n");
 }
 
 // liblinear arguments
